@@ -1,0 +1,46 @@
+* {
+  font-family: 'DM Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.container {
+  padding: 2rem 1rem;
+}
+
+.nav {
+  padding: 2rem 6rem;
+  width: '100%';
+  display: 'flex';
+  justify-content: 'space-between';
+  align-items: 'center'
+}
+
+.round-input {
+  border-radius: 5rem;
+}
+
+.ButtonLoginGoogle {
+  height: 40px !important;
+  border-radius: 5rem !important;
+}
+
+.ButtonLoginGoogle div {
+  height: 40px !important;
+  border-radius: 5rem !important;
+  align-items: 'center' !important;
+}
+
+.search .ant-input-group-wrapper .ant-input-search {
+  border-radius: 5rem !important;
+}
+
+.ant-select-focused .ant-select-selector,
+.ant-select-selector:focus,
+.ant-select-selector:active,
+.ant-select-open .ant-select-selector {
+  border-color: #f36969 !important;
+  box-shadow: none !important;
+}
