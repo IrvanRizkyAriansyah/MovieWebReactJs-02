@@ -58,7 +58,7 @@ export default function ListGenre() {
       {({ open }) => (
         <>
           <div className="relative mt-1">
-            <Listbox.Button className="relative w-1/3 text-white cursor-default rounded-md border bg-transparent py-2 pl-3 pr-10 text-left shadow-sm focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 sm:text-sm">
+            <Listbox.Button className="relative w-32 text-white cursor-default rounded-md border bg-transparent py-2 text-left shadow-sm focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 sm:text-sm">
               <span className="flex items-center">
                 <span className="ml-3 block truncate">{selected.name || selected}</span>
               </span>
@@ -74,14 +74,14 @@ export default function ListGenre() {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Listbox.Options className="absolute z-10 mt-1 max-h-44 w-1/3 overflow-auto rounded-md bg-gray-700 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              <Listbox.Options className="absolute z-10 mt-1 max-h-44 w-32 overflow-auto rounded-md bg-gray-700 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                 {genre.map((genre) => (
                   <Listbox.Option
                     key={genre.id}
                     className={({ active }) =>
                       classNames(
                         active ? 'text-white bg-red-500' : 'text-white',
-                        'relative cursor-default select-none py-2 pl-3 pr-9'
+                        'relative cursor-default select-none py-2'
                       )
                     }
                     value={genre}

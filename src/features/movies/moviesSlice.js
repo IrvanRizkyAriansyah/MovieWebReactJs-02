@@ -33,11 +33,44 @@ export const getCarousel = createAsyncThunk(
     }
 )
 
+export const getUpcoming = createAsyncThunk(
+    "movies/getUpcoming", async () => {
+        try {
+           const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/movie/upcoming`, {
+            params: {
+              api_key: process.env.REACT_APP_TMBD_KEY,
+            }
+          }) 
+           console.log(res);
+           return res.data.results
+        } catch (error) {
+            console.log(error)
+        }
+    }
+)
+
+export const getTopRated = createAsyncThunk(
+    "movies/getTopRated", async () => {
+        try {
+           const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/movie/top_rated`, {
+            params: {
+              api_key: process.env.REACT_APP_TMBD_KEY,
+            }
+          }) 
+           return res.data.results
+        } catch (error) {
+            console.log(error)
+        }
+    }
+)
+
 export const moviesSlice = createSlice({
     name: "movies",
     initialState: {
         movies: [],
         carousel: [],
+        upcoming: [],
+        top_rated: [],
         loading: false,
     },
     reducers: {},
@@ -60,6 +93,26 @@ export const moviesSlice = createSlice({
             state.carousel = payload
         },
         [getCarousel.rejected] : (state) => {
+            state.loading = false
+        },
+        [getUpcoming.pending] : (state) => {
+            state.loading = true
+        },
+        [getUpcoming.fulfilled] : (state, {payload}) => {
+            state.loading = false
+            state.upcoming = payload
+        },
+        [getUpcoming.rejected] : (state) => {
+            state.loading = false
+        },
+        [getTopRated.pending] : (state) => {
+            state.loading = true
+        },
+        [getTopRated.fulfilled] : (state, {payload}) => {
+            state.loading = false
+            state.top_rated = payload
+        },
+        [getTopRated.rejected] : (state) => {
             state.loading = false
         },
     }

@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom'
 import { Swiper, SwiperSlide } from "swiper/react";
 import {ArrowRightOutlined} from '@ant-design/icons'
 import { useDispatch, useSelector } from 'react-redux';
-import { getMovies } from '../features/movies/moviesSlice'
+import { getTopRated } from '../features/movies/moviesSlice';
 
 // Import Swiper styles
 import "swiper/css";
@@ -18,22 +18,22 @@ import { FreeMode, Pagination } from "swiper";
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 
-export default function Trending() {
+export default function TopRated() {
   const { Meta } = Card;
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const {movies, loading} = useSelector ((state) => state.movies)
+  const {top_rated, loading} = useSelector ((state) => state.movies)
 
   useEffect(() => {
-    dispatch(getMovies())
+    dispatch(getTopRated())
   }, [dispatch])
 
   if (loading) return <p style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Loading...</p>
 
   return (
-    <div className='bg-gray-900'>
+    <div className='bg-gray-900 mt-2'>
     <div className='flex justify-between px-6'>
-      <h1 className='text-xl font-bold text-white border-l-2 border-l-red-500 pl-2'>Popular Movie</h1>
+      <h1 className='text-xl font-bold text-white border-l-2 border-l-red-500 pl-2'>Top Rated</h1>
       <Button style={{display: 'flex', alignItems: 'center', padding: 0}} danger type='link' onClick={() => navigate(`/movie`)}
       > View All <ArrowRightIcon className='flex text-red-500 w-4 ml-2'/></Button>
     </div>
@@ -45,8 +45,8 @@ export default function Trending() {
         // className="mySwiper"  
         className='px-2'
         >
-      { movies &&
-        movies.map((res) => {
+      { top_rated &&
+        top_rated.map((res) => {
           return(
             <SwiperSlide key={res.id} className='p-2 h-40'> 
             <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" className='rounded-xl shadow-md shadow-red-500 min-h-full'

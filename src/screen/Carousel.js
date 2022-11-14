@@ -13,7 +13,6 @@ export default function Poster() {
 
   const dispatch = useDispatch()
   const {carousel, loading} = useSelector ((state) => state.movies)
-  const {genre} = useSelector ((state) => state.genres)
 
   useEffect(() => {
     dispatch(getCarousel())

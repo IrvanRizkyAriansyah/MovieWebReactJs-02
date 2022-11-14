@@ -44,30 +44,32 @@ export default function Search() {
   if (loading) return <p style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Loading...</p>
 
   return (
-    <>
+    <div className='bg-gray-900'>
     <Navbar />
     <Header query={'Genres "'+genre+'"'} />
-    <div className="container">
-    <h2 style={{paddingBottom: '2rem'}}>Browse by Category</h2>
+    <h2 className='text-lg font-bold text-white border-l-2 border-l-red-500 pl-2 my-4 mx-6'>Browse by Category</h2>
+    <div className='px-6'>
     <ListGenre />
-    <div style={{display: 'grid', gridTemplateColumns: 'repeat(4, 15rem)', gap: '2rem', justifyContent: 'center'}}>
+    </div>
+    <div className='grid grid-cols-2 gap-4 pt-4 px-6'>
       { searchGenre &&
         searchGenre.filter(function(e){
           return e.poster_path !== null 
         }).map((res, index) => {
           return(
-            <Card key={res.id}
-              hoverable
-              style={{ borderRadius: 10, width: 'auto', height: 'auto' }}
-              bodyStyle={{ padding: 0, objectFit: 'cover' }}
-              cover={<img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt={res.title} style={{borderRadius: 10}}/>}
-            onClick={() => navigate(`/movie/${res.id}`)}
-            />
+            // <Card key={res.id}
+            //   hoverable
+            //   style={{ borderRadius: 10, width: 'auto', height: 'auto' }}
+            //   bodyStyle={{ padding: 0, objectFit: 'cover' }}
+            //   cover={<img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt={res.title} style={{borderRadius: 10}}/>}
+            // onClick={() => navigate(`/movie/${res.id}`)}
+            // />
+            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt={res.title} style={{borderRadius: 10}}
+            onClick={() => navigate(`/movie/${res.id}`)} />
           )
         })
       }
     </div>
     </div>
-    </>
   );
 }
