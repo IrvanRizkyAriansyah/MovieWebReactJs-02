@@ -30,7 +30,7 @@ export default function Credit(props) {
     <div className='px-6 mt-4 max-w-7xl lg:hidden'>
     <h2 className='font-bold text-lg text-white border-l-2 border-l-red-500 pl-2'>All Cast</h2>
     <Swiper
-        slidesPerView={3}
+        slidesPerView={2}
         freeMode={true}
         modules={[FreeMode, Pagination]}
         className="mySwiper"
@@ -56,7 +56,7 @@ export default function Credit(props) {
     </Swiper>
     <h2 className='font-bold text-lg text-white border-l-2 border-l-red-500 pl-2 mt-2'>All Crew</h2>
     <Swiper
-        slidesPerView={3}
+        slidesPerView={2}
         freeMode={true}
         modules={[FreeMode, Pagination]}
         className="mySwiper"
