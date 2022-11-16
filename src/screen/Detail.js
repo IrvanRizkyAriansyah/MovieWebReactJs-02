@@ -24,12 +24,12 @@ export default function Detail() {
   return (
     <>
     <Navbar />
-    <div className='bg-gray-900'>
+    <div className='bg-gray-900 max-w-7xl lg:overflow-hidden'>
     <div style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(17, 24, 39, 1)), url(https://image.tmdb.org/t/p/original${detail.backdrop_path})`,
-        backgroundSize: 'cover'
+        backgroundSize: 'cover',
       }} className='flex mt-16 p-6 items-center'>
-    <img src={`https://image.tmdb.org/t/p/w500${detail.poster_path}`} alt="poster" className='rounded-lg h-48 mr-4 drop-shadow-lg'/>
+    <img src={`https://image.tmdb.org/t/p/w500${detail.poster_path}`} alt="poster" className='rounded-lg h-48 mr-4 drop-shadow-lg lg:h-96'/>
     <div>
     <h1 className='font-extrabold text-white text-3xl'>{detail.title}</h1>
     <div style={{display: 'flex'}}>
@@ -42,10 +42,12 @@ export default function Detail() {
     <h5 style={{display: 'flex', alignItems: 'center', fontWeight: 'bold', color: '#fff', marginBottom: '1rem'}}>
     <StarOutlined style={{color: "yellow", marginRight: '0.5rem'}}/>{rating} / 10 </h5>
     <ButtonTrailer title={detail.title} />
+    <h1 className='hidden text-lg font-bold mt-2 ml-6 text-white border-l-2 border-l-red-500 pl-2 lg:block lg:ml-0'>Synopsis</h1>
+    <p className='hidden text-white text-justify ml-6 mr-6 lg:block lg:ml-0'>{detail.overview}</p>
     </div>
     </div>
-    <h1 className='text-lg font-bold mt-2 ml-6 text-white border-l-2 border-l-red-500 pl-2'>Synopsis</h1>
-    <p className='text-white text-justify ml-6 mr-6'>{detail.overview}</p>
+    <h1 className='text-lg font-bold mt-2 ml-6 text-white border-l-2 border-l-red-500 pl-2 lg:hidden'>Synopsis</h1>
+    <p className='text-white text-justify ml-6 mr-6 lg:hidden'>{detail.overview}</p>
     <Credit id={id}/>
     </div>
     </> 

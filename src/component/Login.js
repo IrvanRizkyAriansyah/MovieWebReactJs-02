@@ -101,22 +101,6 @@ export default function Login() {
           <ButtonPrimary type="submit" title="Login" />
           </div>
           <ButtonBorder title="Login With Google" click={signInWithGoogle} icon={<GoogleOutlined />}/>
-          {/* <GoogleLogin
-              shape={'pill'}
-              onSuccess={credentialResponse => {
-              console.log(credentialResponse);
-              const token = credentialResponse.credential;
-              const decoded = jwt_decode(token);
-              localStorage.setItem("token", JSON.stringify(credentialResponse.credential));
-              localStorage.setItem("user", JSON.stringify({first_name: decoded.given_name, image: decoded.picture}));
-              setIsModalOpen(false);
-              navigate('/');
-              window.location.reload(1);
-            }}
-            onError={() => {
-              console.log('Login Failed');
-            }}
-          /> */}
           </div>
           <div className='flex mt-4 -mb-4'>
           <p className='mr-2'>Don't have an accout?</p>

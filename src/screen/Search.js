@@ -9,29 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSearch } from '../features/movies/searchSlice';
 
 export default function Search() {
-  // const [movie, setMovie] = useState([])
-  // const {query} = useParams()
-  // const navigate = useNavigate()
-
-  // const loadMovie = async () => {
-  //   try {
-  //     await axios.get(`${process.env.REACT_APP_BASE_URL}/search/movie`, {
-  //     params: {
-  //       api_key: process.env.REACT_APP_TMBD_KEY,
-  //       query: `${query}`
-  //     }
-  //   }).then((res) => {
-  //     setMovie(res.data.results)
-  //   })
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   loadMovie()
-  // }, [movie])
-
   const {query} = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -48,12 +25,12 @@ export default function Search() {
   </p>
 
   return (
-    <div className='bg-gray-900'>
+    <div className='bg-gray-900 max-w-7xl'>
     <Navbar />
     <Header query={'All Movies "'+query+'"'} />
     <div className='bg-gray-900 px-6'>
     <h2 className='text-lg font-bold text-white border-l-2 border-l-red-500 pl-2 my-4'>Search Result "{query}"</h2>
-    <div className='grid grid-cols-2 gap-4'>
+    <div className='grid grid-cols-2 gap-6 lg:grid-cols-5'>
       { search &&
         search.filter(function(e){
           return e.poster_path !== null 
@@ -67,7 +44,7 @@ export default function Search() {
             //   />}
             // onClick={() => navigate(`/movie/${res.id}`)}
             // />
-            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt={res.title} className='rounded-xl min-h-max shadow-md shadow-red-500'
+            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt={res.title} className='rounded-xl min-h-max shadow-md shadow-red-500 h-80 w-64 object-cover'
             onClick={() => navigate(`/movie/${res.id}`)}
             />
           )

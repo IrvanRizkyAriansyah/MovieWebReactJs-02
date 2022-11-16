@@ -36,28 +36,10 @@ export default function ListGenre() {
   if (loading) return <p style={{display: 'flex', justifyContent: 'center'}}>Loading...</p>
 
 	return (
-		// <div className='mx-2 my-2 justify-end items-end'>
-		// <Swiper
-    //     slidesPerView={3}
-    //     freeMode={true}
-    //     modules={[FreeMode, Pagination]}
-    //     className="mySwiper"
-    //   	>
-    //     {genre.map((res, index) => {
-    //       return (
-    //         <SwiperSlide key={res.id}> 
-    //         <Button danger shape="round" size={'large'} ghost={true} className='w-28'
-    //         onClick={() => navigate(`/genre/${res.name}`)}
-    //         > {res.name} </Button> 
-    //         </SwiperSlide>
-    //       )}
-    //   	)}      
-    // 	</Swiper>    
-		// </div>
-    <Listbox value={selected} onChange={setSelected}>
+		<Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
-          <div className="relative mt-1">
+          <div className="relative mt-1 max-w-7xl">
             <Listbox.Button className="relative w-32 text-white cursor-default rounded-md border bg-transparent py-2 text-left shadow-sm focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 sm:text-sm">
               <span className="flex items-center">
                 <span className="ml-3 block truncate">{selected.name || selected}</span>

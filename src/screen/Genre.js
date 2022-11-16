@@ -10,28 +10,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSearchGenre } from '../features/movies/searchSlice';
 
 export default function Search() {
-  // const [movie, setMovie] = useState([])
-  // const {genre} = useParams()
-  // const navigate = useNavigate()
-
-  // const loadMovie = async () => {
-  //   try {
-  //     await axios.get(`${process.env.REACT_APP_BASE_URL}/search/movie`, {
-  //     params: {
-  //       api_key: process.env.REACT_APP_TMBD_KEY,
-  //       query: `${genre}`
-  //     }
-  //   }).then((res) => {
-  //     setMovie(res.data.results)
-  //   })
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   loadMovie()
-  // },[movie]);
   const {genre} = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -44,7 +22,7 @@ export default function Search() {
   if (loading) return <p style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Loading...</p>
 
   return (
-    <div className='bg-gray-900'>
+    <div className='bg-gray-900 max-w-7xl'>
     <Navbar />
     <Header query={'Genres "'+genre+'"'} />
     <h2 className='text-lg font-bold text-white border-l-2 border-l-red-500 pl-2 my-4 mx-6'>Browse by Category</h2>

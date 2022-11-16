@@ -20,12 +20,12 @@ export default function Movie() {
   if (loading) return <p style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Loading...</p>
 
   return (
-    <div className='bg-gray-900'>
+    <div className='bg-gray-900 max-w-7xl'>
     <Navbar />
     <Header query="All Movies" />
     <div className='px-6'>
     <h2 className='text-lg font-bold text-white border-l-2 border-l-red-500 pl-2 my-4'>All Movies</h2>
-    <div className='grid grid-cols-2 gap-4 lg:grid-cols-5'>
+    <div className='grid grid-cols-2 gap-4 lg:grid-cols-5 lg:gap-6'>
       {
         movies.map((res, index) => {
           return(
@@ -37,7 +37,7 @@ export default function Movie() {
             //   onClick={() => navigate(`/movie/${res.id}`)}/>}
             // >
             // </Card>
-            <img alt="example" src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} className='rounded-xl min-h-max shadow-md shadow-red-500'
+            <img alt="example" src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} className='rounded-xl min-h-max shadow-md shadow-red-500 h-80 w-64 cursor-pointer'
             onClick={() => navigate(`/movie/${res.id}`)}/>
           )
         })

@@ -23,7 +23,6 @@ export default function Login() {
   });
 	
 	const responseGoogle = (response) => {
-    console.log(response);
     localStorage.setItem("token",JSON.stringify(response.accessToken))
     localStorage.setItem("user",JSON.stringify(response.profileObj))
     setIsModalOpen(false);

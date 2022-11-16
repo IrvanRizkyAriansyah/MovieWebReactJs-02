@@ -31,7 +31,7 @@ export default function Trending() {
   if (loading) return <p style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Loading...</p>
 
   return (
-    <div className='bg-gray-900'>
+    <div className='bg-gray-900 max-w-7xl'>
     <div className='flex justify-between px-6'>
       <h1 className='text-xl font-bold text-white border-l-2 border-l-red-500 pl-2'>Popular Movie</h1>
       <Button style={{display: 'flex', alignItems: 'center', padding: 0}} danger type='link' onClick={() => navigate(`/movie`)}
@@ -49,7 +49,7 @@ export default function Trending() {
         movies.map((res) => {
           return(
             <SwiperSlide key={res.id} className='p-2 h-40'> 
-            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" className='rounded-xl shadow-md shadow-red-500 min-h-full' 
+            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" className='rounded-xl shadow-md shadow-red-500 min-h-full cursor-pointer' 
               onClick={() => navigate(`/movie/${res.id}`)} />
             </SwiperSlide>
           )
@@ -70,7 +70,7 @@ export default function Trending() {
         movies.map((res) => {
           return(
             <SwiperSlide key={res.id} className='p-2 h-40'>
-            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" title={res.title} className='rounded-xl shadow-md shadow-red-500 mb-2 object-cover min-h-full lg:h-80'
+            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" title={res.title} className='rounded-xl shadow-md shadow-red-500 mb-2 object-cover min-h-full h-80 w-64 cursor-pointer'
             onClick={() => navigate(`/movie/${res.id}`)} />
             </SwiperSlide>
           )

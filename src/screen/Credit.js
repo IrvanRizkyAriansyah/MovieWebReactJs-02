@@ -26,7 +26,8 @@ export default function Credit(props) {
   if (loading) return <p style={{display: 'flex', justifyContent: 'center'}}>Loading...</p>
 
   return (
-    <div className='px-6 mt-4'>
+    <>
+    <div className='px-6 mt-4 max-w-7xl lg:hidden'>
     <h2 className='font-bold text-lg text-white border-l-2 border-l-red-500 pl-2'>All Cast</h2>
     <Swiper
         slidesPerView={3}
@@ -80,5 +81,61 @@ export default function Credit(props) {
         }
       </Swiper>
     </div>
+
+    <div className='hidden px-6 mt-4 max-w-7xl lg:block'>
+    <h2 className='font-bold text-lg text-white border-l-2 border-l-red-500 pl-2'>All Cast</h2>
+    <Swiper
+        slidesPerView={6}
+        freeMode={true}
+        modules={[FreeMode, Pagination]}
+        className="mySwiper"
+      >
+      { cast &&
+        cast.filter(function(e){
+          return e.profile_path !== null 
+        }).map((res, index) => {
+          return(
+            <SwiperSlide> 
+            <Card
+              hoverable key={res.id}
+              style={{ borderRadius: 10, width: 'auto', height: 'auto', margin: '0.5rem'}}
+              bodyStyle ={{padding: '0.5rem', maxHeight: '4.5rem'}}
+              cover={<img src={`https://image.tmdb.org/t/p/w500${res.profile_path}`} alt={res.name} style={{borderRadius: 10}} />}
+            >
+              <Meta title={res.name} description={res.character} />
+            </Card>
+            </SwiperSlide>
+          )
+        }) 
+      }
+    </Swiper>
+    <h2 className='font-bold text-lg text-white border-l-2 border-l-red-500 pl-2 mt-2'>All Crew</h2>
+    <Swiper
+        slidesPerView={6}
+        freeMode={true}
+        modules={[FreeMode, Pagination]}
+        className="mySwiper"
+      >
+      { crew &&
+          crew.filter(function(e){
+            return e.profile_path !== null 
+          }).map((res, index) => {
+            return(
+              <SwiperSlide> 
+              <Card
+                hoverable key={res.id}
+                style={{ borderRadius: 10, width: 'auto', height: 'auto', margin: '0.5rem'}}
+                bodyStyle ={{padding: '0.5rem', maxHeight: '4.5rem'}}
+                cover={<img src={`https://image.tmdb.org/t/p/w500${res.profile_path} `} alt={res.name} style={{borderRadius: 10}} />}
+              >
+                <Meta title={res.name} description={res.job} />
+              </Card>
+              </SwiperSlide>
+            )
+          })
+        }
+      </Swiper>
+    </div>
+    </>
   );
 }

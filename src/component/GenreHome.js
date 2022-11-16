@@ -27,7 +27,7 @@ export default function Genres() {
   if (loading) return <p style={{display: 'flex', justifyContent: 'center'}}>Loading...</p>
 
 	return (
-		<div className='px-6'>
+		<div className='px-6 max-w-7xl'>
     <div className='p-3 bg-gray-800 rounded-lg my-2'>
 		<ListGenre />
     </div>
@@ -39,15 +39,8 @@ export default function Genres() {
       { movies &&
         movies.map((res, index) => {
           return(
-            <SwiperSlide key={res.id} className='p-2 h-40 lg:hidden'> 
-            {/* <Card
-              hoverable key={res.id}
-              style={{ borderRadius: 10, width: 'auto', height: 'auto', margin: '0.5rem'}}
-              bodyStyle ={{padding: 0}}
-              cover={<img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" style={{borderRadius: 10}}
-              onClick={() => navigate(`/movie/${res.id}`)}/>}
-            />  */}
-            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" className='rounded-xl shadow-md shadow-red-500 min-h-full'
+            <SwiperSlide key={res.id} className='p-2 h-40 lg:hidden'>
+            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" className='rounded-xl shadow-md shadow-red-500 min-h-full cursor-pointer'
               onClick={() => navigate(`/movie/${res.id}`)} />
             </SwiperSlide>
           )
@@ -64,14 +57,7 @@ export default function Genres() {
         movies.map((res, index) => {
           return(
             <SwiperSlide key={res.id} className='hidden p-2 h-40 lg:block'> 
-            {/* <Card
-              hoverable key={res.id}
-              style={{ borderRadius: 10, width: 'auto', height: 'auto', margin: '0.5rem'}}
-              bodyStyle ={{padding: 0}}
-              cover={<img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" style={{borderRadius: 10}}
-              onClick={() => navigate(`/movie/${res.id}`)}/>}
-            />  */}
-            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" className='rounded-xl shadow-md shadow-red-500 min-h-full lg:h-80'
+            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" className='rounded-xl shadow-md shadow-red-500 min-h-full h-80 h-80 w-64 cursor-pointer'
               onClick={() => navigate(`/movie/${res.id}`)} />
             </SwiperSlide>
           )

@@ -9,7 +9,6 @@ export const getMovies = createAsyncThunk(
               api_key: process.env.REACT_APP_TMBD_KEY,
             }
           }) 
-           console.log(res);
            return res.data.results
         } catch (error) {
             console.log(error)
@@ -25,7 +24,6 @@ export const getCarousel = createAsyncThunk(
               api_key: process.env.REACT_APP_TMBD_KEY,
             }
           }) 
-           console.log(res);
            return res.data.results.splice(0,3)
         } catch (error) {
             console.log(error)
@@ -41,7 +39,6 @@ export const getUpcoming = createAsyncThunk(
               api_key: process.env.REACT_APP_TMBD_KEY,
             }
           }) 
-           console.log(res);
            return res.data.results
         } catch (error) {
             console.log(error)

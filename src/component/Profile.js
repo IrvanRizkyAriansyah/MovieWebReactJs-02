@@ -27,7 +27,6 @@ function classNames(...classes) {
 export default function Profile() {
   const navigate = useNavigate()
   const profile = JSON.parse(localStorage.getItem('user'));
-  console.log(profile)
 	return (
 		// <div>
     //   {/* <ButtonBorder title="Login" click={showModal} /> */}

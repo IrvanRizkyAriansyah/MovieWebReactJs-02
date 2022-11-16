@@ -9,7 +9,6 @@ export const getCredit = createAsyncThunk(
               api_key: process.env.REACT_APP_TMBD_KEY
             }
             })
-            console.log(res.data)
             return res.data
           } catch (error) {
             console.error(error)

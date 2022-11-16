@@ -37,39 +37,7 @@ export default function Nav() {
   };
 
   return (
-    // <div className="nav" style={{width:'100%', position: 'absolute', zIndex: 3, alignItems: 'center'}}>
-    // <div style={{width: '25%'}}>
-    // <img src={Logo} alt="logo" onClick={() => navigate(`/`)} style={{cursor: "pointer"}}/>
-    // </div>
-    // <div className="search" style={{width: '50%'}}>
-    // <Search
-    //   placeholder="What do you want to watch?"
-    //   onSearch={onSearch}
-    //   style={{
-    //     justifyContent: 'center'
-    //   }}
-    // />
-    // </div>
-    
-    // <div style={{width: '25%'}}>
-    // {
-    //   token !== null && profile !== null? 
-    //   <div style={{display: 'flex', justifyContent:'flex-end', alignItems: 'center'}}>
-    //   <h4 style={{color: 'white', fontWeight: 'bold', marginBottom: 0, marginRight: '1rem', display: 'flex', alignItems: 'center'}}>{profile.displayName}</h4> 
-    //   <img src={profile.photoURL || userIcon} alt="" style={{borderRadius: '50%',height: '2.5rem', marginRight: '1rem'}} /> 
-    //   <ButtonPrimary title="Logout" click={()=>window.location.reload(localStorage.clear()).then(navigate('/'))} /> 
-    //   </div>
-    //   : 
-    //   <div style={{display: 'flex', justifyContent:'flex-end'}}>
-    //   <div style={{marginRight: '1rem'}}>
-    //   <Login />
-    //   </div>
-    //   <Register />
-    //   </div>
-    // }
-    // </div>
-    // </div>
-    <div className='fixed top-0 left-0 right-0 z-20'>
+    <div className='fixed top-0 left-0 right-0 z-20 max-w-7xl'>
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>

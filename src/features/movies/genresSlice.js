@@ -9,7 +9,6 @@ export const getGenres = createAsyncThunk(
               api_key: process.env.REACT_APP_TMBD_KEY,
             }
           }) 
-           console.log(res);
            return res.data.genres
         } catch (error) {
             console.log(error)
