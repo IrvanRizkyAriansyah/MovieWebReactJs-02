@@ -49,9 +49,9 @@ export default function Search() {
     <Header query={'Genres "'+genre+'"'} />
     <h2 className='text-lg font-bold text-white border-l-2 border-l-red-500 pl-2 my-4 mx-6'>Browse by Category</h2>
     <div className='px-6'>
-    <ListGenre />
+    {/* <ListGenre /> */}
     </div>
-    <div className='grid grid-cols-2 gap-4 pt-4 px-6'>
+    <div className='grid grid-cols-2 gap-4 pt-4 px-6 lg:grid-cols-5'>
       { searchGenre &&
         searchGenre.filter(function(e){
           return e.poster_path !== null 

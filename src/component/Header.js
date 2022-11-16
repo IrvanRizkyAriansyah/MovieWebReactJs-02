@@ -6,8 +6,8 @@ export default function Header(props) {
 		<div style={{
             backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(17, 24, 39, 1)), url(${Teater})`,
             backgroundSize: 'cover'
-        }} className='relative mt-16 p-6 h-1/2'>
-        <h1 className='text-3xl text-white font-bold'>{props.query}</h1>
+        }} className='relative mt-16 p-6 h-1/2 lg:h-40'>
+        <h1 className='text-3xl text-white font-bold lg:mt-8'>{props.query}</h1>
 		</div>
 	)
 }

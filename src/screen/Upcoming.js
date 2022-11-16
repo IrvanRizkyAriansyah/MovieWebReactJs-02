@@ -37,7 +37,7 @@ export default function Upcoming() {
       <Button style={{display: 'flex', alignItems: 'center', padding: 0}} danger type='link' onClick={() => navigate(`/movie`)}
       > View All <ArrowRightIcon className='flex text-red-500 w-4 ml-2'/></Button>
     </div>
-    <div className='mx-6'>
+    <div className='mx-6 lg:hidden'>
     <Swiper
         slidesPerView={3}
         freeMode={true}
@@ -50,6 +50,27 @@ export default function Upcoming() {
           return(
             <SwiperSlide key={res.id} className='p-2 h-40'> 
             <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" className='rounded-xl shadow-md shadow-red-500 min-h-full'
+              onClick={() => navigate(`/movie/${res.id}`)}/>
+            </SwiperSlide>
+          )
+        })
+      }
+    </Swiper>
+    </div>
+
+    <div className='hidden mx-6 lg:block'>
+    <Swiper
+        slidesPerView={5}
+        freeMode={true}
+        modules={[FreeMode, Pagination]}
+        // className="mySwiper"  
+        className='px-2'
+        >
+      { upcoming &&
+        upcoming.map((res) => {
+          return(
+            <SwiperSlide key={res.id} className='p-2 h-40'> 
+            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt="poster" className='rounded-xl shadow-md shadow-red-500 min-h-full lg:h-80'
               onClick={() => navigate(`/movie/${res.id}`)}/>
             </SwiperSlide>
           )

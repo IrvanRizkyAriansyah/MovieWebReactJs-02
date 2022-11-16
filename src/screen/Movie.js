@@ -25,7 +25,7 @@ export default function Movie() {
     <Header query="All Movies" />
     <div className='px-6'>
     <h2 className='text-lg font-bold text-white border-l-2 border-l-red-500 pl-2 my-4'>All Movies</h2>
-    <div className='grid grid-cols-2 gap-4'>
+    <div className='grid grid-cols-2 gap-4 lg:grid-cols-5'>
       {
         movies.map((res, index) => {
           return(

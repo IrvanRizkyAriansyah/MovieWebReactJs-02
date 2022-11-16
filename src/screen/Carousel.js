@@ -25,7 +25,7 @@ export default function Poster() {
       display: 'flex', 
       justifyContent: 'center',
       alignItems: 'center',
-      paddingLeft: '6rem',
+      paddingLeft: '2rem',
       paddingRight: '50%'
     }}>
     <Skeleton active delay={5000}/>  
@@ -41,7 +41,7 @@ export default function Poster() {
         carousel.map((res) => {
           return(
             <div key={res.id}>
-              <div className='flex h-60 items-center pl-8 mt-16 rounded-lg' style={{
+              <div className='flex h-60 lg:h-80 items-center pl-8 mt-16 rounded-lg' style={{
                 backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/original${res.backdrop_path})`,
                 backgroundSize: 'cover'
               }}>

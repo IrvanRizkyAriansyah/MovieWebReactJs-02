@@ -67,7 +67,7 @@ export default function Profile() {
           <Menu.Item>
             {({ active }) => (
               <div>
-              <img src={profile.providerData[0].photoURL || userIcon} alt={profile.displayName} className='rounded-full h-28 mx-auto mt-2 bg-gray-400' />
+              <img src={profile.providerData[0].photoURL || userIcon} alt={profile.displayName} className='rounded-full h-28 mx-auto mt-2 bg-gray-400 m-2' />
               <p className='text-center font-bold mt-2'>{profile.displayName}</p>
               <div className='flex justify-center mb-2'>
               <ButtonPrimary title="Logout" click={()=>window.location.reload(localStorage.clear()).then(navigate('/'))}/> 

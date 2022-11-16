@@ -95,7 +95,7 @@ export default function Nav() {
                     onClick={() => navigate(`/`)}
                   />
                   <img
-                    className="hidden h-6 w-auto lg:block cursor-pointer"
+                    className="hidden h-8 w-auto lg:block cursor-pointer"
                     src={Logo}
                     alt="Your Company"
                     onClick={() => navigate(`/`)}
