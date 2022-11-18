@@ -43,7 +43,7 @@ export default function Search() {
             //   cover={<img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt={res.title} style={{borderRadius: 10}}/>}
             // onClick={() => navigate(`/movie/${res.id}`)}
             // />
-            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt={res.title} style={{borderRadius: 10}}
+            <img src={`https://image.tmdb.org/t/p/w500${res.poster_path}`} alt={res.title} className='rounded-xl min-h-max shadow-md shadow-red-500 h-80 w-64 cursor-pointer'
             onClick={() => navigate(`/movie/${res.id}`)} />
           )
         })
