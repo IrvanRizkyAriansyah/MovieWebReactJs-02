@@ -14,8 +14,8 @@ import { BorderOutlined } from '@ant-design/icons';
 import Profile from '../component/Profile';
 
 const navigation = [
-  { name: 'Movies', href: '#', current: false },
-  { name: 'TV Show', href: '#', current: false },
+  { name: 'Movies', href: '/movie', current: false },
+  { name: 'TV Show', href: '/', current: false },
 ]
 
 function classNames(...classes) {

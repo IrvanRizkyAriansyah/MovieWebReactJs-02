@@ -7,6 +7,7 @@ import Header from '../component/Header';
 import Navbar from './Nav';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSearch } from '../features/movies/searchSlice';
+import Footer from '../component/Footer';
 
 export default function Search() {
   const {query} = useParams()
@@ -25,7 +26,7 @@ export default function Search() {
   </p>
 
   return (
-    <div className='bg-gray-900 max-w-7xl'>
+    <div className='bg-gray-900'>
     <Navbar />
     <Header query={'All Movies "'+query+'"'} />
     <div className='bg-gray-900 px-6'>
@@ -52,6 +53,7 @@ export default function Search() {
       }
     </div>
     </div>
+    <Footer />
     </div>
   );
 }

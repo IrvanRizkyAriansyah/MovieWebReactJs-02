@@ -31,7 +31,7 @@ export default function Trending() {
   if (loading) return <p style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Loading...</p>
 
   return (
-    <div className='bg-gray-900 max-w-7xl'>
+    <div className='bg-gray-900'>
     <div className='flex justify-between px-6'>
       <h1 className='text-xl font-bold text-white border-l-2 border-l-red-500 pl-2'>Popular Movie</h1>
       <Button style={{display: 'flex', alignItems: 'center', padding: 0}} danger type='link' onClick={() => navigate(`/movie`)}

@@ -7,6 +7,7 @@ import Header from '../component/Header';
 import Navbar from './Nav'
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovies } from '../features/movies/moviesSlice'
+import Footer from '../component/Footer';
 
 export default function Movie() {
   const navigate = useNavigate()
@@ -20,7 +21,7 @@ export default function Movie() {
   if (loading) return <p style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Loading...</p>
 
   return (
-    <div className='bg-gray-900 max-w-7xl'>
+    <div className='bg-gray-900'>
     <Navbar />
     <Header query="All Movies" />
     <div className='px-6'>
@@ -44,6 +45,7 @@ export default function Movie() {
       }
     </div>
     </div>
+    <Footer />
     </div>
   );
 }

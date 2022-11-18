@@ -33,7 +33,7 @@ export default function Poster() {
   )
 
   return (
-    <div className='max-w-7xl'>
+    <div>
       <Carousel autoplay className='m-6'>
       { carousel &&
         carousel.map((res) => {

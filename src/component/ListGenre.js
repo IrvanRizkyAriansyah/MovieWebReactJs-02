@@ -40,7 +40,7 @@ export default function ListGenre() {
       {({ open }) => (
         <>
           <div className="relative mt-1 max-w-7xl">
-            <Listbox.Button className="relative w-32 text-white cursor-default rounded-md border bg-transparent py-2 text-left shadow-sm focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 sm:text-sm">
+            <Listbox.Button className="relative w-32 text-white rounded-md border bg-transparent py-2 text-left shadow-sm focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 sm:text-sm cursor-pointer">
               <span className="flex items-center">
                 <span className="ml-3 block truncate">{selected.name || selected}</span>
               </span>

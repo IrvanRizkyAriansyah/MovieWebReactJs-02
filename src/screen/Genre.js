@@ -8,6 +8,7 @@ import Navbar from './Nav';
 import ListGenre from '../component/ListGenre';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSearchGenre } from '../features/movies/searchSlice';
+import Footer from '../component/Footer';
 
 export default function Search() {
   const {genre} = useParams()
@@ -22,7 +23,7 @@ export default function Search() {
   if (loading) return <p style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Loading...</p>
 
   return (
-    <div className='bg-gray-900 max-w-7xl'>
+    <div className='bg-gray-900'>
     <Navbar />
     <Header query={'Genres "'+genre+'"'} />
     <h2 className='text-lg font-bold text-white border-l-2 border-l-red-500 pl-2 my-4 mx-6'>Browse by Category</h2>
@@ -48,6 +49,7 @@ export default function Search() {
         })
       }
     </div>
+    <Footer />
     </div>
   );
 }
